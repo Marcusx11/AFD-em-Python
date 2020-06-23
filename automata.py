@@ -72,6 +72,9 @@ class Automata:
 
     # Método para percorrer o autômato utilizando-se de uma string de letras de seu alfabeto
     def string_transition(self, string):
+        if self.initial is None:
+            return "Autômato não possui estado inicial"
+
         current_state = self.initial  # Começando a percorrer do estado inicial
         for char in string:  # Percorrendo-se a String
             if char in self.alphabet:
@@ -115,3 +118,4 @@ if __name__ == "__main__":
 
     # Exemplo de string
     print(automata.string_transition("aaaabbbbbababaabbbaabbb"))
+
